@@ -87,7 +87,7 @@ const fetchData = async () => {
 fetchData();
 
 
-}, [casesType])
+}, [caseType])
 
 
 
