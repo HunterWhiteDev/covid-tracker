@@ -11,6 +11,10 @@
     height: 100%;
 }
 
+.app__dropdown {
+    background-color: white;
+}
+
 .info-name {
     font-size: 20px;
     font-weight: bold;

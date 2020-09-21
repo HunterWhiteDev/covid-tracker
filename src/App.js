@@ -112,11 +112,11 @@ await fetch(url)
 
    <div className="app__stats">
 
-   <Infobox onClick={e => setCasesType("cases")}title="Coronavirus cases" total={prettyPrintStat(countryInfo.cases)} cases={prettyPrintStat(countryInfo.todayCases)}/>
+   <Infobox isRed active={casesType=== "cases"} onClick={e => setCasesType("cases")}title="Coronavirus cases" total={prettyPrintStat(countryInfo.cases)} cases={prettyPrintStat(countryInfo.todayCases)}/>
 
-   <Infobox onClick={e => setCasesType("recovered")}title="Recovered" total={prettyPrintStat(countryInfo.recovered)} cases={prettyPrintStat(countryInfo.todayRecovered)}/>
+   <Infobox  active={casesType=== "recovered"} onClick={e => setCasesType("recovered")}title="Recovered" total={prettyPrintStat(countryInfo.recovered)} cases={prettyPrintStat(countryInfo.todayRecovered)}/>
 
-   <Infobox onClick={e => setCasesType("deaths")}title="Deaths" total={prettyPrintStat(countryInfo.deaths)} cases={prettyPrintStat(countryInfo.todayDeaths)}/>
+   <Infobox  isRed active={casesType=== "deaths"} onClick={e => setCasesType("deaths")}title="Deaths" total={prettyPrintStat(countryInfo.deaths)} cases={prettyPrintStat(countryInfo.todayDeaths)}/>
 
 
 
@@ -126,6 +126,7 @@ await fetch(url)
      countries={mapCountries}
      center={mapCenter}
      zoom={mapZoom}
+     casesType={casesType}
    />
 
 </div>
@@ -137,8 +138,8 @@ await fetch(url)
     <CardContent>
     <h3>Live Cases by Country</h3>
     <Table countries={tableData} />
-    <h3>Worldwide new cases</h3> 
-    <LineGraph />
+     <h3 className="app__graphTitle">World wide new {casesType}</h3>
+    <LineGraph className="app__graph" casesType={casesType}/>
     </CardContent>
 
 

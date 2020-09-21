@@ -21,6 +21,33 @@
   
 }
 
+
+.app__right {
+  display: flex;
+  flex-direction: column;
+}
+
+.app__right .MuiCardContent-root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.app__graph {
+  flex-grow: 1;
+}
+
+.app__header {
+  color: red;
+  font-size: 2rem;
+}
+
+
+.app__graphTitle {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 @media (max-width: 990px) {
   .app {
     flex-direction: column;
