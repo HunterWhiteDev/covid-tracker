@@ -6,7 +6,7 @@ import {MenuItem, FormControl, Select, Card, CardContent} from "@material-ui/cor
 import Infobox from "./Infobox";
 import Map from "./Map";
 import Table from "./Table"
-import {sortData} from "./util";
+import {sortData, prettyPrintStat} from "./util";
 import LineGraph from "./LineGraph";
 import "leaflet/dist/leaflet.css";
 function App() {
@@ -20,6 +20,7 @@ function App() {
   });
   const [mapZoom, setMapZoom] = useState(3)
   const [mapCountries, setMapCountries] = useState([]);
+  const [casesType, setCasesType] = useState(["cases"]);
 
 
 //https://disease.sh/v3/covid-19/countries
@@ -86,7 +87,7 @@ await fetch(url)
     <div className="app__left">
     <div className="app__header">
 
-
+       
     <h1>COVID-19 TRACKER</h1>
      <FormControl className="app__dropdown">
        <Select 
@@ -111,11 +112,11 @@ await fetch(url)
 
    <div className="app__stats">
 
-   <Infobox title="Coronavirus cases" total={countryInfo.cases} cases={countryInfo.todayCases}/>
+   <Infobox onClick={e => setCasesType("cases")}title="Coronavirus cases" total={prettyPrintStat(countryInfo.cases)} cases={prettyPrintStat(countryInfo.todayCases)}/>
 
-   <Infobox title="Recovered" total={countryInfo.recovered} cases={countryInfo.todayRecovered}/>
+   <Infobox onClick={e => setCasesType("recovered")}title="Recovered" total={prettyPrintStat(countryInfo.recovered)} cases={prettyPrintStat(countryInfo.todayRecovered)}/>
 
-   <Infobox title="Deaths" total={countryInfo.deaths} cases={countryInfo.todayDeaths}/>
+   <Infobox onClick={e => setCasesType("deaths")}title="Deaths" total={prettyPrintStat(countryInfo.deaths)} cases={prettyPrintStat(countryInfo.todayDeaths)}/>
 
 
 
