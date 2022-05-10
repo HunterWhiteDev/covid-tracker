@@ -119,11 +119,11 @@ await fetch(url)
 
    <div className="app__stats">
 
-   <Infobox isRed active={casesType=== "cases"} onClick={e => setCasesType("cases")}title="Coronavirus cases" total={prettyPrintStat(countryInfo.cases)} cases={prettyPrintStat(countryInfo.todayCases)}/>
+   <Infobox isRed active={casesType === "cases"} onClick={e => setCasesType("cases")}title="Coronavirus cases" total={prettyPrintStat(countryInfo.cases)} cases={prettyPrintStat(countryInfo.todayCases)}/>
 
-   <Infobox  active={casesType=== "recovered"} onClick={e => setCasesType("recovered")}title="Recovered" total={prettyPrintStat(countryInfo.recovered)} cases={prettyPrintStat(countryInfo.todayRecovered)}/>
+   <Infobox  active={casesType === "recovered"} onClick={e => setCasesType("recovered")}title="Recovered" total={prettyPrintStat(countryInfo.recovered)} cases={prettyPrintStat(countryInfo.todayRecovered)}/>
 
-   <Infobox  isRed active={casesType=== "deaths"} onClick={e => setCasesType("deaths")}title="Deaths" total={prettyPrintStat(countryInfo.deaths)} cases={prettyPrintStat(countryInfo.todayDeaths)}/>
+   <Infobox  isRed active={casesType === "deaths"} onClick={e => setCasesType("deaths")}title="Deaths" total={prettyPrintStat(countryInfo.deaths)} cases={prettyPrintStat(countryInfo.todayDeaths)}/>
 
 
 
