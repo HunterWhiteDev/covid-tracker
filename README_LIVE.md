@@ -11,4 +11,4 @@ View the metric size by country on the map.
 ### `Cases per country`
 
 View cases by country.
-![Sign In!](https://i.imgur.com/Tz2IWAe.png)
+![Sign In!](https://i.imgur.com/0l7c18d.png)
