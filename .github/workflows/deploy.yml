@@ -16,10 +16,10 @@ jobs:
       - name: Deploy to Server
         run: |
           ssh -o StrictHostKeyChecking=no hunter@hunterwhitedev.com << 'EOF'
-            cd /home/hunter/websites/coivd-tracker || exit
+            cd /home/hunter/websites/covid-tracker || exit
             git pull origin main || exit 1
             sudo npm install || exit 1
             sudo npm run build || exit 1
-            sudo cp -r build/* /home/hunter/websites/coivd-tracker/public_html || exit 1
+            sudo cp -r build/* /home/hunter/websites/covid-tracker/public_html || exit 1
             sudo systemctl restart apache2 || exit 1
           EOF
